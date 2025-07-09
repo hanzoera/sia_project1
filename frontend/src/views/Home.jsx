@@ -7,7 +7,7 @@ function Home() {
         { id: 2, name: 'RJ45 Connector', price: 15, stock: 10 },
         { id: 3, name: 'RTX 3060', price: 12500, stock: 3 }
     ]
-
+    
     return (
         <>
             { console.log('Home page loaded.') }
