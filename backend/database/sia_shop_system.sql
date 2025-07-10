@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2025 at 06:13 PM
+-- Generation Time: Jul 10, 2025 at 06:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -83,7 +83,8 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`id`, `username`, `email`, `password`, `role`) VALUES
-(1, 'Test1', 'test1@dev.com', '$2b$10$qUwcb428c3VxCsywugAzxexCSHAxhwAtXJqazmMt3/zmtTnwCXlS2', '');
+(1, 'test1', 'test1@dev.com', '$2b$10$qUwcb428c3VxCsywugAzxexCSHAxhwAtXJqazmMt3/zmtTnwCXlS2', ''),
+(2, 'test2', 'test2@gmail.com', '$2b$10$FupbotF77A2HAvKCPEWIeeWMuqUoPGINNESIR.gHzTyye7.qtV6Zu', '');
 
 --
 -- Indexes for dumped tables
@@ -144,7 +145,7 @@ ALTER TABLE `sales_info`
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
