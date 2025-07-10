@@ -1,5 +1,3 @@
-import { findUserbyUsername } from "../models/userModel.mjs";
-
 export const validateRegistration = async (req, res, next) => {
     // Destructure request body object into variables
     const { 
@@ -29,13 +27,8 @@ export const validateRegistration = async (req, res, next) => {
     if (password.length < 6) {
         return res.status(400).json({ msg : 'Password must be at least 6 characters long.' });
     }
-
-    // Check if username already exists
-    const existingUser = await findUserbyUsername(username);
-    if (existingUser !== null) {
-        return res.status(400).json({ msg : 'Username already taken' });
-    }
     
+    console.log('from validateRegistration: Passed.');
     next();
 };
 
@@ -43,11 +36,13 @@ export const validateLogin = async (req, res, next) => {
     // Destructure request body object into variables
     const {
         username,
+        password
     } = req.body;
 
-    try {
-        c
-    } catch {
-
+    // Check if username and password are blank
+    if (!username || !password) {
+        return res.status(400).json({ msg : 'Both username and password are required.' })
     }
+
+    next();
 };

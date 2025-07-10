@@ -5,17 +5,17 @@ import connection from '../config/database.mjs'
 export const findUserbyUsername = async (username) => {
     // Destructure the array 
     const [row] = await connection.execute('SELECT * FROM user_info WHERE username = ?', [username]);
-    // Assign values into user to extract only the username 
+    // Assign the values into user to extract only the first row 
     const user = row[0];
 
     // If no user matched, return null to bypass the existing username check
     if (!user) {
         return null;
     }
-    
+
     // Return the username string
     console.log(user.username);
-    return user.username;
+    return row[0];
 }
 
 export const createUser = async (username, email, password) => {
